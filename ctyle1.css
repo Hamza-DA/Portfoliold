@@ -19,7 +19,6 @@ nav{
   margin:  auto;
   padding: 13px 40px;
   max-width: 1240px;
-  background: red;
 }
 li{
   display: inline-block;
@@ -94,7 +93,7 @@ footer{
   max-width: 1240px;
   width: 100%;
   padding: 2rem 40px;
-  background-color: red;
+  
 }
 .social{
   display: flex;
