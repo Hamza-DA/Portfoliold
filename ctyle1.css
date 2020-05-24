@@ -17,7 +17,7 @@ nav{
   display: flex;
   align-items: center;
   margin:  auto;
-  padding: 13px 40px;
+  padding: 25px 40px;
   max-width: 1240px;
 }
 li{
@@ -26,7 +26,7 @@ li{
 }
 li .a1{
   font-weight: 600;
-  font-size: 1.4375rem;
+  font-size: 19px;
   font-family: Montserrat;
 }
 .a1:hover{
@@ -42,32 +42,37 @@ li .a1{
   transition: all 0.3s ease;
 }
 h1 {
+  max-width: 400px;
   font-family: Montserrat;
   font-weight: 800;
   font-size: 4em;
   border-bottom: 2px #FD5052 solid;
-  width: 21.5rem;
-  margin: 10px 0px;
-  padding: 10px 0px;
 }
 p{
   font-family: Montserrat;
   font-weight: 400;
-  font-size: 1.3rem
+  font-size: 1.3rem;
+  margin-top: 10px;
 }
 span{
   font-weight: 600;
 }
-.holder{
-  margin: 0rem 8rem;
-  position: absolute;
-  top: 50%;
-  transform: translate(-0%, -70%);
+.container{
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
-.rightpin{
-  position: absolute;
-  right: 0;
-  top: 50%;
+.holder{
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-changer{
+  width: 21px;
+  height: 4px;
+  background: #FD5052;
+  border-radius: 5px;
 }
 .lineright{
   width: 2px;
@@ -80,20 +85,16 @@ span{
   margin: 0 8rem 0 0;
 }
 footer{
-  position: absolute;
-  bottom: 0;
+  position: fixed;
   left: 0;
+  bottom: 0;
   right: 0;
-  display: flex;
-  align-items: center;
 }
 .fholder{
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-
-  max-width: 1240px;
-  width: 100%;
-  padding: 2rem 40px;
-  
+  padding: 25px 0;
 }
 .social{
   display: flex;
@@ -108,14 +109,15 @@ h2{
   justify-content: space-around;
   display: flex;
   transform: translateX(0%);
+
 }
 .burger{
   display: none;
 }
-.container{
-  max-width: 1240px;
-}
 @media screen and (max-width: 1070px) {
+  .content-changer{
+    display: none;
+  }
   body{
     overflow-x: hidden;
     overflow-y: hidden;
@@ -128,14 +130,18 @@ h2{
     z-index: 10;
   }
   .nav-links{
-    position: absolute;
-    right: 0px;
-    width: 100%;
-    align-items: center;
-    top: 8vh;
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+  .back{
+    position: absolute;
+    right: 0px;
+    top: 10vh;
+    width: 100%;
+    height: 100%;
     z-index: 10;
     transform: translateX(100%);
     transition: transform .3s ease-in-out;
@@ -149,8 +155,9 @@ h2{
   }
 }
 .container-desa{
+  transform: scale(0.9);
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .nav-active{
   transition: 0.4s ease-out;
