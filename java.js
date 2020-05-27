@@ -4,12 +4,10 @@ const navSlide = () => {
   const navlink = document.querySelectorAll('.back li');
   const container = document.querySelector('.container');
 
-
   //toggle nav
   burger.addEventListener('click',()=>{
     nav.classList.toggle('nav-active')
     container.classList.toggle('container-desa')
-
 
   //animation
   navlink.forEach((link, index) => {
@@ -22,3 +20,18 @@ const navSlide = () => {
   })
 }
 navSlide();
+
+const formslid = () => {
+  const formdea = document.querySelector('.form-active');
+  const boutton = document.getElementById('cbutn');
+  const form = document.querySelector('.form');
+  const fcross = document.querySelector('.navc');
+
+  boutton.addEventListener('click',()=>{
+    form.classList.toggle('form-active')
+  })
+  fcross.addEventListener('click', ()=>{
+    formdea.classList.toggle('form-active')
+  })
+}
+formslid();

@@ -7,11 +7,125 @@
   color: #262626;
   outline: none;
   letter-spacing: 1px;
+  align-items: center;
 }
 body{
-  min-height: 100%;
-  background-color: #F9F9FB;
+  overflow-y: hidden;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
 }
+
+.butn{
+  width: 20px;
+  background: red;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+}
+.line1, .line2{
+  width: 25px;
+  height: 3px;
+  background: #262626;
+  margin: 5px;
+  border-radius: 5px;
+}
+.line1{
+  transform: rotate(-45deg) translate(-3px, 3px);
+}
+.line2{
+  transform: rotate(45deg) translate(-3px, -3px);
+}
+.backc{
+  height: 15vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navc{
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+.navc:hover{
+  transform: rotate(90deg);
+}
+.ccontainer{
+  display: flex;
+  flex-direction: column;
+  height: 88vh;
+}
+h3{
+  font-size: 30px;
+  margin: 30px;
+  margin-left: 0;
+  margin-top: 0;
+  font-weight: 800;
+}
+input, textarea{
+  font-family: Montserrat;
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 19px;
+  padding: 10px;
+  padding-left: 0;
+  color: black;
+  width: 800px;
+  max-width: 800px;
+  border: none;
+  border-bottom: 2px solid #fcc15d;
+  transition: .1s ease-in;
+  font-weight: 800;
+}
+input:focus {
+  padding: 15px;
+}
+textarea:focus {
+  padding: 15px;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+}
+h4{
+  text-align: left;
+  width: 100%;
+  padding: 0 15px;
+  padding-left: 0;
+}
+button{
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  background: #fcc15d;
+  color: #262626;
+  border: none;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: .1s ease;
+}
+button:active{
+  transform: scale(0.9);
+}
+.form{
+  display: none;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: .3s ease;
+}
+
+.form-active{
+  display: block;
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+
+
+
+
+
 nav{
   justify-content: space-between;
   display: flex;
@@ -57,10 +171,15 @@ p{
 span{
   font-weight: 600;
 }
+.display{
+  display: block;
+}
 .container{
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 40px;
+  transition: all 0.2s ease-in-out;
+
 }
 .holder{
   height: 50vh;
@@ -85,7 +204,7 @@ span{
   margin: 0 8rem 0 0;
 }
 footer{
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
@@ -95,6 +214,9 @@ footer{
   align-items: center;
   justify-content: space-between;
   padding: 25px 0;
+  margin: auto;
+  max-width: 1240px;
+
 }
 .social{
   display: flex;
@@ -130,18 +252,19 @@ h2{
     z-index: 10;
   }
   .nav-links{
-    height: 80%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
+    transition: 0.4s ease-out;
   }
   .back{
     position: absolute;
     right: 0px;
     top: 10vh;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 10;
     transform: translateX(100%);
     transition: transform .3s ease-in-out;
@@ -157,10 +280,8 @@ h2{
 .container-desa{
   transform: scale(0.9);
   opacity: 0;
-  transition: all 0.2s ease-in-out;
 }
 .nav-active{
-  transition: 0.4s ease-out;
   transform: translateX(0%);
 }
 .toggle .l1{
@@ -172,10 +293,10 @@ h2{
 @keyframes NavlinkFade {
   from {
     opacity: 0;
-    transform: translateX(200px);
+    transform: scale(0.6);
   }
   to {
     opacity: 1;
-    transform: translateX(0px);
+    transform: scale(1);
   }
 }
